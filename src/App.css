@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  justify-content: center;
+  background-color: #000a1f;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* Add relative positioning */
+}
+
+.image-container {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin-top: 100px;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateY(0deg);
+  transition: transform 0.7s;
+}
+
+.image-container span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+}
+
+.image-container span img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.btn-container {
+  width: 80%;
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Space out the buttons */
+  margin-top: 220px; /* Add some margin for better visibility */
+}
+
+.btn {
+  background-color: #162645;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative; /* Ensure buttons are positioned within the flex container */
+  bottom: auto; /* Reset bottom position */
+}
+
+.btn:hover {
+  filter: brightness(1.5);
+}
